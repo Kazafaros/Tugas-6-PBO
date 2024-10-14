@@ -1,0 +1,25 @@
+<form action="/add" method="POST">
+    <label>Judul Buku</label>
+    <input type="text" name="judul" required>
+
+    <label>Pengarang</label>
+    <input type="text" name="pengarang">
+
+    <label>Penerbit</label>
+    <input type="text" name="penerbit">
+
+    <label>Tahun Terbit</label>
+    <input type="number" name="tahun_terbit" required>
+
+    <label>Jumlah Buku</label>
+    <input type="number" name="jumlah_buku" required>
+
+    <label>Jenis Buku</label>
+    <select name="jenis_buku_id">
+        <% jenis_buku.forEach(function(item) { %>
+            <option value="<%= item.id %>"><%= item.nama_jenis %></option>
+        <% }); %>
+    </select>
+
+    <button type="submit">Tambah Buku</button>
+</form>

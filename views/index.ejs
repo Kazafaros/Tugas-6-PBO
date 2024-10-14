@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009688;
+        }
+
+        .btn-primary {
+            background-color: #2196F3;
+        }
+
+        .btn-primary:hover {
+            background-color: #0d8bf3;
+        }
+
+        .btn-danger {
+            background-color: #f44336;
+        }
+
+        .btn-danger:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Buku</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Judul</th>
+                <th>Pengarang</th>
+                <th>Penerbit</th>
+                <th>Tahun Terbit</th>
+                <th>Jumlah Buku</th>
+                <th>Kategori</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% buku.forEach(b => { %>
+                <tr>
+                    <td><%= b.judul %></td>
+                    <td><%= b.pengarang %></td>
+                    <td><%= b.penerbit %></td>
+                    <td><%= b.tahun_terbit %></td>
+                    <td><%= b.jumlah_buku %></td>
+                    <td><%= b.kategori %></td>
+                    <td>
+                        <a href="/edit/<%= b.id %>" class="btn btn-primary">Edit</a> |
+                        <a href="/hapus/<%= b.id %>" class="btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <br><br>
+    <a href="/tambah" class="btn btn-primary">Tambah Buku</a>
+</body>
+</html>
+

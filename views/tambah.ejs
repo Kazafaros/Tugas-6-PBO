@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tambah Buku Baru</h1>
+    <form action="/tambah" method="POST">
+        <label for="judul">Judul:</label>
+        <input type="text" id="judul" name="judul"><br><br>
+
+        <label for="pengarang">Pengarang:</label>
+        <input type="text" id="pengarang" name="pengarang"><br><br>
+
+        <label for="penerbit">Penerbit:</label>
+        <input type="text" id="penerbit" name="penerbit"><br><br>
+
+        <label for="tahun_terbit">Tahun Terbit:</label>
+        <input type="text" id="tahun_terbit" name="tahun_terbit"><br><br>
+
+        <label for="jumlah_buku">Jumlah Buku:</label>
+        <input type="text" id="jumlah_buku" name="jumlah_buku"><br><br>
+
+        <label for="kategori">Kategori:</label>
+        <input type="text" id="kategori" name="kategori"><br><br>
+
+        <button type="submit">Tambah Buku</button>
+    </form>
+</body>
+</html>
+
